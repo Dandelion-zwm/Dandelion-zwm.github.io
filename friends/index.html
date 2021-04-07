@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="https://dandelion-zwm.github.io/media/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/css/live2d.css">
     <link rel="stylesheet" href="https://dandelion-zwm.github.io/styles/main.css">
-    <meta name="description" content="zwm带佬的blog" />
+    <meta name="description" content="记得歌时，不记归时节" />
     <link rel="stylesheet" href="https://dandelion-zwm.github.io/media/css/font-awesome.css">
-    <title>Dandelion</title>
+    <title>WeimingZhang</title>
 </head>
 <body>
     <!-- 响应式布局，针对PC端内容显示 -->
@@ -48,7 +48,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="https://dandelion-zwm.github.io">Dandelion&nbsp;&nbsp;|</a>
+        <a class="navbar-brand" href="https://dandelion-zwm.github.io">WeimingZhang&nbsp;&nbsp;|</a>
         <span class="navbar-brand mbapspan"><i id="mbaplayer" class="fa fa-play-circle-o" aria-hidden="true"
             style="font-size: 28px;top: 12px;position: absolute;" onclick="aplayerPlay();"></i></span>
       </div>
@@ -68,7 +68,7 @@
           
           <li>
             <a href="/archives">
-              归档
+              时间轴
             </a>
           </li>
           
@@ -282,7 +282,30 @@
                 <div id="comment" class="fct" style="background: white;">
                     <div class="commentcontainer">
                         
-                        <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+                        
+                        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '0f43aa6cdf0eae4e03e0',
+    clientSecret: '46d7af7e0f0a5e5dd590d399c19e2ec642e6e77b',
+    repo: 'blog-comment.github.io',
+    owner: 'Dandelion-zwm.github.io',
+    admin: ['Dandelion-zwm.github.io'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+                        
+                        
                         
                     </div>
                 </div>

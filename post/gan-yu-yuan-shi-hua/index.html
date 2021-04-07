@@ -1,100 +1,336 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="description" content="
+1. 从赞化宫到甘雨园
+2017年6月28日的下午，临近平时放学的那一刻，我站在赞化楼和瞻星楼之间的衔接廊上，夕阳透过窗照了进来。忽然意识到，这似乎也像是过去和未来的衔接点。
+眼前浮现出周主任特意从五楼年级处下来向我转达状元的喜报的场景，..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://dandelion-zwm.github.io/media/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://dandelion-zwm.github.io/styles/main.css">
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/dracula.min.css">
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/clipboard.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/css/live2d.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+    <!-- 数学公式 -->
+    
+    <title>WeimingZhang</title>
+    
+    <style>
+        .markdownIt-TOC {
+            padding-left: 2px;
+            width: 100%;
+        }
 
-<title>甘雨园拾花 | WeimingZhang</title>
-<meta name="description" content="记得歌时，不记归时节">
+        .markdownIt-TOC li {
+            padding-left: 2%;
+        }
+    </style>
+    
+</head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://dandelion-zwm.github.io/favicon.ico?v=1617758712469">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://dandelion-zwm.github.io/styles/main.css">
-
-
-  
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
-  
-
-  
-
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-
-  </head>
-  <body>
-  
-    <nav class="navbar border fixed split-nav">
-  <div class="nav-brand">
-    <h3><a href="https://dandelion-zwm.github.io">WeimingZhang</a></h3>
-  </div>
-  <div class="collapsible">
-    <input id="collapsible1" type="checkbox" name="collapsible1">
-    <button>
-      <label for="collapsible1">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </label>
-    </button>
-    <div class="collapsible-body">
-      <ul class="inline">
-        
-          <li>
-            
-              <a href="/" class="menu">
-                首页
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/archives" class="menu">
-                时间轴
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/tags" class="menu">
-                标签
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/about" class="menu">
-                关于
-              </a>
-            
-          </li>
-        
-      </ul>
+<body>
+    <div id="landlord">
+        <div class="message" style="opacity:0"></div>
+        <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
     </div>
-  </div>
-</nav>
+    <div id="codeCopyText" style="display: none"></div>
+    <div id="domainname" style="display:none">https://dandelion-zwm.github.io</div>
+    <!-- 响应式布局，针对PC端内容显示 -->
+    <div id="content">
+        <div>
+            <div id="bar">
+                <head>
+  <!-- 引入Bootstrap核心样式文件 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/css/bootstrap.min.css">
+</head>
+<style>
+  @media screen and (max-width:1200px) and (min-width: 768px) {
+    @media (min-width: 768px) {
+      .navbar-nav {
+        float: right;
+        margin: 0;
+      }
+    }
+  }
+  @media screen and (max-width:768px){
+    .mbapspan{
+      padding: 0;
+    }
+  }
+</style>
 
-    <div id="top" class="row site">
-      <div class="sm-12 md-8 col">
-        <div class="paper">
-          <article class="article">
-            <h1>甘雨园拾花</h1>
-            <p class="article-meta">
-              11-01-2020
-              
-            </p>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barmenu"
+          aria-expanded="false" id="barbutton">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="https://dandelion-zwm.github.io">WeimingZhang&nbsp;&nbsp;|</a>
+        <span class="navbar-brand mbapspan"><i id="mbaplayer" class="fa fa-play-circle-o" aria-hidden="true"
+            style="font-size: 28px;top: 12px;position: absolute;" onclick="aplayerPlay();"></i></span>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="barmenu">
+        <ul class="nav navbar-nav">
+          
+          
+          <li>
+            <a href="/">
+              首页
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archives">
+              时间轴
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags">
+              标签
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/post/about">
+              关于
+            </a>
+          </li>
+          
+          
+          
+          
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+
+  <!-- 引入jQuery核心js文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+  <script>
+  var btstate = false;
+  var bt = $("#barbutton");
+  var bm = $("#barmenu");
+  bt.click(function(){
+    dropdown();
+  })
+  function dropdown(){
+    console.log(btstate);
+    //下拉
+    if(btstate==false){
+      bt.removeClass("collapsed");
+      bt.attr("aria-expanded","true");
+      bm.attr("aria-expanded","true")
+      bm.fadeIn(700);
+      btstate = true;
+    }
+    else{
+      bt.addClass("collapsed");
+      bt.attr("aria-expanded","false");
+      bm.removeClass("in");
+      bm.hide();
+      bm.attr("aria-expanded","false");
+      btstate = false;
+    }
+  }
+  </script> 
+</body>
+            </div>
+            <div class="row">
+                <div class="side"><body>
+    
+
+
+
+    
+</body>
+<script>
+    //-------------------------------------------------搜索
+    // 获取搜索框、搜索按钮、清空搜索、结果输出对应的元素
+    var searchInput = document.querySelector('.search-input');
+    var searchResults = document.querySelector('.search-results');
+
+    // 申明保存文章的标题、链接、内容的数组变量
+    var searchValue = '',
+        arrItems = [],
+        arrLinks = [],
+        arrTitles = [],
+        arrResults = [],
+        indexItem = [],
+        itemLength = 0;
+    var tmpDiv = document.createElement('div');
+    tmpDiv.className = 'result-item';
+
+    // ajax 的兼容写法
+    var xhr = new XMLHttpRequest() || new ActiveXObject('Microsoft.XMLHTTP');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            xml = xhr.responseXML;
+            arrItems = xml.getElementsByTagName('entry');
+            itemLength = arrItems.length;
+            // 遍历并保存所有文章对应的标题、链接、内容到对应的数组中
+            // 同时过滤掉 HTML 标签
+            for (i = 0; i < itemLength; i++) {
+                var link = arrItems[i].getElementsByTagName('link')[0];
+                arrLinks[i] = link.getAttribute("href");
+                arrTitles[i] = arrItems[i].getElementsByTagName('title')[0].
+                childNodes[0].nodeValue.replace(/<.*?>/g, '');
+            }
+        }
+    }
+
+    // 开始获取根目录下 feed.xml 文件内的数据
+    xhr.open('get', '/atom.xml', true);
+    xhr.send();
+
+
+
+    // 输入框内容变化后就开始匹配，可以不用点按钮
+    // 经测试，onkeydown, onchange 等方法效果不太理想，
+    // 存在输入延迟等问题，最后发现触发 input 事件最理想，
+    // 并且可以处理中文输入法拼写的变化
+    searchInput.oninput = function () {
+        setTimeout(searchConfirm, 0);
+    }
+    searchInput.onfocus = function () {
+        searchResults.style.display = 'block';
+    }
+
+    function searchConfirm() {
+        if (searchInput.value == '') {
+            searchResults.style.display = 'none';
+        } else if (searchInput.value.search(/^\s+$/) >= 0) {
+            // 检测输入值全是空白的情况
+            searchInit();
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '请输入有效内容...';
+            searchResults.appendChild(itemDiv);
+        } else {
+            // 合法输入值的情况
+            searchInit();
+            searchValue = searchInput.value;
+            // 在标题、内容中查找
+            searchMatching(arrTitles, searchValue);
+        }
+    }
+
+    // 每次搜索完成后的初始化
+    function searchInit() {
+        arrResults = [];
+        indexItem = [];
+        searchResults.innerHTML = '';
+        searchResults.style.display = 'block';
+    }
+
+    function searchMatching(arr1, input) {
+        // 忽略输入大小写
+        input = new RegExp(input, 'i');
+        // 在所有文章标题、内容中匹配查询值
+        for (i = 0; i < itemLength; i++) {
+            if (arr1[i].search(input) !== -1) {
+                var arr = arr1;
+                indexItem.push(i); // 保存匹配值的索引
+                var indexContent = arr[i].search(input);
+                // 此时 input 为 RegExp 格式 /input/i，转换为原 input 字符串长度
+                var l = input.toString().length - 3;
+                var step = 10;
+
+                // 将匹配到内容的地方进行黄色标记，并包括周围一定数量的文本
+                arrResults.push(arr[i].slice(indexContent - step, indexContent));
+            }
+        }
+
+        // 输出总共匹配到的数目
+        var totalDiv = tmpDiv.cloneNode(true);
+        totalDiv.innerHTML = '<b>总匹配：' + indexItem.length + ' 项<hr></b>';
+        searchResults.appendChild(totalDiv);
+
+        // 未匹配到内容的情况
+        if (indexItem.length == 0) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '未匹配到内容...';
+            searchResults.appendChild(itemDiv);
+        }
+
+        // 将所有匹配内容进行组合
+        for (i = 0; i < arrResults.length; i++) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerHTML = '<b>[' + arrTitles[indexItem[i]] +
+                ']</b><p>' + arrResults[i] + "</p><hr />";
+            itemDiv.setAttribute('onclick', 'changeHref(arrLinks[indexItem[' + i + ']])');
+            searchResults.appendChild(itemDiv);
+        }
+    }
+
+    function changeHref(href) {
+        location.href = href;
+    }
+
+    function showqq() {
+        var qq = document.getElementById("qq").innerHTML;
+        if (qq != '')
+            window.location.href = "tencent://message/?uin=" + qq + "&Site=&Menu=yes";
+        else
+            alert("博主暂未设置QQ联系方式");
+    }
+</script>
+</div>
+                
+            <div class="col-md-2 col-lg-3"></div>
+            <div id="postmain" class="col-xs-12 col-sm-12 col-md-8  col-lg-6 posttop" >
+                <link rel="stylesheet" href="https://dandelion-zwm.github.io/media/css/font-awesome.css">
+
+<body>
+    <div class="allcontent" id="postdetail">
+        <div class="postshow" style="padding-bottom: 0;">
             
-            <div class="post-content">
-              <hr>
+            <div class="postdetailimg" style="width:100%;overflow: hidden;">
+                
+                <img src="" class="postimage">
+                
+            </div>
+            <div class="postinfo-detail">
+                <div class="postdate"><i class="fa fa-calendar"></i>11-01-2020</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 175 min read</div>
+            <div class="posttag">
+                
+            </div>
+        </div>
+        
+        <div id="articlecontent">
+            <div id="texttitle" style="text-align: center">
+                <h2>甘雨园拾花</h2>
+                <!-- id 将作为查询条件 -->
+                <div id="pl" style="display:none">https://dandelion-zwm.github.io/post/gan-yu-yuan-shi-hua/</div>
+                <div id="rootaddr" style="display:none">https://dandelion-zwm.github.io</div>
+                <span id="hotnum">
+                    <h4><i class="fa fa-eye" aria-hidden="true" style="color: #FF8C00;"></i>&nbsp;&nbsp;热度</i>: <i
+                            class="hotnum">loading...</i></h4>
+                </span>
+            </div>
+            <div class="text ">
+                <hr>
 <h1 id="1-从赞化宫到甘雨园">1. 从赞化宫到甘雨园</h1>
 <p>2017年6月28日的下午，临近平时放学的那一刻，我站在赞化楼和瞻星楼之间的衔接廊上，夕阳透过窗照了进来。忽然意识到，这似乎也像是过去和未来的衔接点。</p>
 <p>眼前浮现出周主任特意从五楼年级处下来向我转达状元的喜报的场景，浮现出与老郭在战前握手的场景，以及中考结束和贾在校园里无忧无虑乱晃、串门，期末代表初三学生的动员发言，汉字听写大会的翘课备战、挥手扬州，每个星期的培优班划水，每个星期的赞化学堂讲座，吕老师的火锅…历历在目。</p>
@@ -612,159 +848,399 @@ sx却已经开写数论题，whr快速搞完数论组合题写了一句话就搁
 <p>是为结。</p>
 
             </div>
-          </article>
+            <hr style="width: 80%;">
+            
+            
+            <div class="postfooter">
+                <ul class="post-copyright">
+                    <li><strong>文章作者：</strong></li>
+            <li><strong>原文链接：</strong>https://dandelion-zwm.github.io/post/gan-yu-yuan-shi-hua/</li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用<i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA
+                许可协议。转载请注明出处！</li>
+            </ul>
         </div>
-        <div class="paper" data-aos="fade-in">
-          
+        <div id="otherpost">
+            
+            <div class="prev-post-pc">
+                <div id="ppcontainer" onclick="window.location.href= 'https://dandelion-zwm.github.io/post/da-yi-shang-zong-jie/';return false">
+                    
+                    
+                    <img src="" style="width: 100%;" class="opimg">
+                    
+                    
+                    <h4 class="optitle">大一上总结</h4>
+                </div>
+            </div>
+            <div class="prev-post">
+                上一篇 <a href="https://dandelion-zwm.github.io/post/da-yi-shang-zong-jie/">大一上总结</a>
+            </div>
+            
+            
+            <div class="next-post-pc">
+                <div id="npcontainer" onclick="window.location.href= 'https://dandelion-zwm.github.io/post/dai-xu/';return false">
+                    
+                    
+                    <img src="" style="width: 100%;" class="opimg">
+                    
+                        
+                    <h4 class="optitle">代序</h4>
+                </div>
+            </div>
             <div class="next-post">
-              <div class="next">
-                下一篇
-              </div>
-              <a href="https://dandelion-zwm.github.io/post/dai-xu/">
-                <h3 class="post-title">
-                  代序
-                </h3>
-              </a>
+                下一篇 <a href="https://dandelion-zwm.github.io/post/dai-xu/">代序</a>
             </div>
-          
+            
+        </div>
+    </div>
+    </div>
+    </div>
+
+</body>
+<script>
+    //文章阅读热度
+    var pl = $("#pl").html();
+    var rootaddr = $("#rootaddr").html();
+    pl = pl.replace(rootaddr, "");
+    $("#hotnum").attr('id', pl);
+</script>
+                <div id="comment" class="comment" style="background: white">
+                    <div class="commentcontainer">
+                        
+                        
+                        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '0f43aa6cdf0eae4e03e0',
+    clientSecret: '46d7af7e0f0a5e5dd590d399c19e2ec642e6e77b',
+    repo: 'blog-comment.github.io',
+    owner: 'Dandelion-zwm.github.io',
+    admin: ['Dandelion-zwm.github.io'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-3">
+            </div>
+            <div id="bg">
+            </div>
         </div>
         
-          
-            <div class="paper" data-aos="fade-in">
-              <div id="gitalk-container"></div>
+        
+        <div class="toc-container">
+            <ul class="markdownIt-TOC">
+<li><a href="#1-%E4%BB%8E%E8%B5%9E%E5%8C%96%E5%AE%AB%E5%88%B0%E7%94%98%E9%9B%A8%E5%9B%AD">1. 从赞化宫到甘雨园</a></li>
+<li><a href="#2%E5%88%9D%E8%AF%86%E9%82%AE%E4%B8%AD">2.初识邮中</a></li>
+<li><a href="#3%E4%B8%96%E7%BA%AA%E6%98%8E%E5%BE%B7">3.世纪明德</a></li>
+<li><a href="#4%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%B8%8E%E7%AC%AC%E4%B8%80">4.第一次与第一</a></li>
+<li><a href="#5%E6%BB%8B%E5%91%B3%E7%94%9F%E6%B4%BB">5.滋味生活</a></li>
+<li><a href="#6%E6%80%9D%E6%BA%90%E8%BD%A9">6.思源轩</a></li>
+<li><a href="#7%E5%85%83%E6%97%A6%E6%99%9A%E4%BC%9A">7.元旦晚会</a></li>
+<li><a href="#8%E5%88%9D%E9%9B%AA">8.初雪</a></li>
+<li><a href="#9%E7%AB%9E%E8%B5%9B%E4%B8%8E%E4%B8%8B%E6%B2%99">9.“竞赛”与下沙</a></li>
+<li><a href="#10%E5%88%9D%E6%98%A5%E7%9A%84%E7%83%A6%E6%81%BC">10.初春的烦恼</a></li>
+<li><a href="#11long-live-the-friendship-between-china-and-australia">11.long live the friendship between China and Australia</a></li>
+<li><a href="#12%E7%AB%9E%E8%B5%9B%E8%B7%AF%E4%B8%8A%E7%9A%84%E8%BF%BD%E5%85%89%E8%80%85%E6%AD%A3%E5%BC%8F%E5%85%A5%E5%9D%91">12.“竞赛路上的追光者”：正式入坑</a></li>
+<li><a href="#13pmo%E7%BB%9E%E8%82%89%E6%9C%BA">13.PMO绞肉机</a></li>
+<li><a href="#14%E6%89%AC%E5%B7%9E%E4%B8%AD%E5%AD%A6%E4%BA%8C%E4%B8%89%E4%BA%8B">14.扬州中学二三事</a></li>
+<li><a href="#15%E6%99%BA%E6%85%A7%E4%B9%8B%E5%A7%8B">15.智慧之始</a></li>
+<li><a href="#16%E6%8A%98%E6%88%9F%E6%B2%89%E6%B2%99">16.折戟沉沙</a></li>
+<li><a href="#16%E9%AB%98%E4%B8%80%E7%9A%84%E5%9B%9E%E6%9C%9B">16*高一的回望</a></li>
+<li><a href="#17%E8%BA%AB%E4%B8%BA%E5%AD%A6%E9%95%BF">17.身为学长</a></li>
+<li><a href="#18%E4%B8%83%E5%BA%A6%E7%81%B0">18.七度灰</a></li>
+<li><a href="#19%E8%AF%97%E9%85%92%E8%B6%81%E5%B9%B4%E5%8D%8E">19.诗酒趁年华</a></li>
+<li><a href="#20-%E5%90%AB%E6%B3%AA%E7%9A%84%E5%BE%AE%E7%AC%91">20. 含泪的微笑</a></li>
+<li><a href="#21%E6%8D%8D%E8%AA%89%E5%B0%8F%E9%AB%98%E8%80%83">21.捍誉小高考</a></li>
+<li><a href="#22%E6%9D%80%E5%90%91thussat">22.杀向THUSSAT</a></li>
+<li><a href="#23%E8%B6%B3%E7%90%83%E5%87%A0%E4%BA%8B">23.足球几事</a></li>
+<li><a href="#24%E5%85%A8%E5%9B%BD%E7%95%85%E6%B8%B8%E8%AE%B0">24.全国畅游记</a></li>
+<li><a href="#25%E9%9A%90%E5%BD%A2%E5%AE%88%E6%8A%A4%E8%80%85">25.隐形守护者</a></li>
+<li><a href="#26%E8%87%AA%E7%94%B1%E5%9C%A8%E9%AB%98%E5%A4%84">26.自由在高处</a></li>
+<li><a href="#27%E5%8C%96%E7%AB%9E%E4%B8%80%E6%97%A5%E6%B8%B8">27.化竞一日游</a></li>
+<li><a href="#28%E5%86%8D%E6%88%98%E9%82%97%E6%B1%9F">28.再战邗江</a></li>
+<li><a href="#29%E5%85%BB%E8%80%81%E7%94%9F%E6%B4%BB">29.养老生活</a></li>
+<li><a href="#30%E6%B5%81%E6%B5%AA%E5%8D%97%E4%BA%AC">30.流浪南京</a></li>
+<li><a href="#31%E4%B8%8D%E8%83%BD%E9%A2%93">31.“不能颓!”</a></li>
+<li><a href="#32%E6%9C%80%E5%90%8E%E7%9A%84%E9%AB%98%E8%81%94">32.最后的高联</a></li>
+<li><a href="#33%E8%BD%AC%E6%88%98%E7%89%A9%E7%AB%9E">33.转战物竞</a></li>
+<li><a href="#34see-you-again">34.“see you again”</a></li>
+<li><a href="#35%E6%9C%89%E5%A4%9A%E5%B0%91%E6%AD%A3%E5%9C%A8%E9%86%92%E6%9D%A5">35.有多少正在醒来</a></li>
+<li><a href="#36%E9%87%8D%E8%B5%B0%E9%95%BF%E5%BE%81%E8%B7%AF">36.重走长征路</a></li>
+<li><a href="#37%E8%BE%9E%E6%97%A7%E8%BF%8E%E6%96%B02020">37.辞旧迎新，2020</a></li>
+<li><a href="#38fake">38.FAKE</a></li>
+<li><a href="#39%E7%A9%B9%E9%A1%B6%E4%B9%8B%E4%B8%8B">39.穹顶之下</a></li>
+<li><a href="#40%E8%B6%85%E9%95%BF%E5%AF%92%E5%81%871">40.超长寒假（1）</a></li>
+<li><a href="#41%E8%B6%85%E9%95%BF%E5%AF%92%E5%81%872">41.超长寒假（2）</a></li>
+<li><a href="#42%E8%B6%85%E9%95%BF%E5%AF%92%E5%81%873">42.超长寒假（3）</a></li>
+<li><a href="#43%E9%9B%84%E5%85%B3%E6%BC%AB%E9%81%93">43.雄关漫道</a></li>
+<li><a href="#44%E6%A2%A6%E5%B9%BB%E4%B9%9D%E8%BF%9E">44.梦幻九连</a></li>
+<li><a href="#45%E5%85%B1%E4%B9%98%E9%A3%8E%E5%BD%92%E5%8E%BB">45.共乘风归去</a></li>
+<li><a href="#46%E5%B0%8F%E7%8C%AA%E4%B8%8A%E7%A7%A4">46.”小猪上秤“</a></li>
+<li><a href="#47%E6%9A%B4%E9%9B%A8%E9%97%B4%E7%9A%84%E5%AE%89%E5%AE%81">47.暴雨间的安宁</a></li>
+<li><a href="#48%E4%B8%8D%E6%98%AF%E7%BB%88%E7%82%B9">48.不是终点</a></li>
+<li><a href="#49%E5%BC%BA%E5%9F%BA%E8%AE%A1%E5%88%92">49.强基计划</a></li>
+<li><a href="#50%E8%AE%B0%E5%BE%97%E6%AD%8C%E6%97%B6%E4%B8%8D%E8%AE%B0%E5%BD%92%E6%97%B6%E8%8A%82">50.记得歌时，不记归时节</a></li>
+</ul>
+
+    </div>
+    </div>
+    </div>
+    <div class="tog">
+        <div class="toggleContainer">
+            <div class="toggle">
+                <i class="fas fa-angle-double-up"></i>
             </div>
-          
-
-          
-        
-      </div>
-
-      <div class="sm-12 md-4 col sidebar">
-  <div class="paper info-container">
-    <img src="https://dandelion-zwm.github.io/images/avatar.png?v=1617758712469" class="no-responsive avatar">
-    <div class="text-muted">记得歌时，不记归时节</div>
-    <div class="social-container">
-      
-        
-          <a href="https://github.com/Dandelion-zwm" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
+        </div>
     </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      最新文章
+    <div id="bgchoice" style="display: none"></div>
+    
+    <div id="bgurl" style="display:none"></div>
+    
     </div>
-    <div class="row">
-      <ul>
-        
-          
-            <li>
-              <a href="https://dandelion-zwm.github.io/post/106-lexicon/">106-lexicon</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://dandelion-zwm.github.io/post/da-yi-shang-zong-jie/">大一上总结</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://dandelion-zwm.github.io/post/gan-yu-yuan-shi-hua/">甘雨园拾花</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://dandelion-zwm.github.io/post/dai-xu/">代序</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://dandelion-zwm.github.io/post/wo-de-2020-gao-kao/">我的2020高考</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://dandelion-zwm.github.io/post/about/">关于</a>
-            </li>
-          
-        
-      </ul>
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      标签列表
-    </div>
-    <div class="row">
-      
-        <a href="https://dandelion-zwm.github.io/tag/5JzE992io/" class="badge success">
-          序
-        </a>
-      
-    </div>
-  </div>
-  <div class="paper">
-    Dandelion's Blog</a>
-Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-Developed by <a href="https://www.luogu.com.cn/blog/Thomas-Chan/" target="_blank">tthac09</a>
- | <a class="rss" href="https://dandelion-zwm.github.io/atom.xml" target="_blank">RSS</a>
-  </div>
-</div>
+</body>
+<script>
+    var img = $("img");
+    for (var i = 0; i < img.length; i++) {
+        if (img.eq(i).attr("class") == undefined) {
+            img.eq(i).attr("class", "lazyload");
+            var imgsrc = img.eq(i).attr("src");
+            img.eq(i).attr("data-original", imgsrc);
+            img.eq(i).attr("src", "");
+            img.eq(i).hide();
+        }
+    }
+</script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script>
+    //寻找所有code标签，加复制按钮鸭！(行内代码除外)
+    var codes = document.getElementsByTagName('code');
+    if (codes.length) {
+        for (var i = 0; i < codes.length; i++) {
+            //高度/行高=文本行数
+            // var rowNum=Math.round(codes[i].height()/parseFloat(codes[i].css('line-height')));
+            // console.log("当前有"+rowNum+"行");
+            var code_id = "code_id_" + i;
+            codes[i].setAttribute("id", code_id);
+            var ci = "#" + code_id;
+            var codedot = $(ci);
+            var rowNum = Math.round(codedot.height() / parseFloat(codedot.css('line-height')));
+            if (rowNum <= 1) continue;
+            var btn = document.createElement("button");
+            btn.setAttribute("class", "copybt");
+            btn.setAttribute("data-clipboard-target", "#" + code_id);
+            btn.innerHTML = '复制代码';
+            codes[i].parentNode.insertBefore(btn, codes[i]);
+        }
+    };
+    var cop = new ClipboardJS('.copybt');
+    var codeCopyText = $("#codeCopyText").html();
+    cop.on('success', function (e) {
+        alert(codeCopyText);
+        e.clearSelection();
+    });
+    cop.on('error', function (e) {
+        alert("矮油，复制失败了...手动复制吧勇士！");
+        e.clearSelection();
+    });
+</script>
 
+<script>
+    $(function () {
+        $('.toggleContainer').click(function () {
+            $('html,body').animate({
+                scrollTop: '0px'
+            }, 800);
+        });
+        $(window).scroll(function () {
+            var st = $(window).scrollTop();
+            if (st > 30) {
+                $(".toggleContainer").fadeIn(400);
+            } else {
+                $(".toggleContainer").fadeOut(100);
+            }
+        });
+    });
+</script>
 
-    </div>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-<script type="application/javascript">
-
-AOS.init();
-
-hljs.initHighlightingOnLoad()
-
+<script>
+    var bgchoice = $('#bgchoice').html();
+    var bg = $('#bg');
+    var bgurl = document.getElementById("bgurl").innerHTML;
+    if (bgchoice == 'default')
+        for (var i = 0; i < 3; i++)
+            bgurl = bgurl.replace("\\", "/");
+    bg.css("background", "url('" + bgurl + "')");
 </script>
 
 
 
-  
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-    <script>
 
-      var gitalk = new Gitalk({
-        clientID: '0f43aa6cdf0eae4e03e0',
-        clientSecret: '46d7af7e0f0a5e5dd590d399c19e2ec642e6e77b',
-        repo: 'blog-comment.github.io',
-        owner: 'Dandelion-zwm.github.io',
-        admin: ['Dandelion-zwm.github.io'],
-        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-        distractionFreeMode: false  // Facebook-like distraction free mode
-      })
+<!-- 动态更改上(下)一篇博客图片框长宽 -->
+<script>
+    npcontainer = document.querySelector('#npcontainer');
+    npstyle = window.getComputedStyle(npcontainer, null);
+    npwidth = npstyle.width;
+    npheight = 0.6 * Number(npwidth.replace("px", ""));
+    npheight = npheight.toString() + "px";
+    var op = $(".opimg");
+    op.css("height", npheight);
+</script>
 
-      gitalk.render('gitalk-container')
+<script src="https://dandelion-zwm.github.io/media/share/dist/Share.js"></script>
 
-    </script>
-  
-
-  
+<script>
+    var avatarSrc = $(".avatar").attr("src");
+    var dp = document.getElementsByClassName("describtion")[0].innerHTML;
+</script>
 
 
+<script>
+    var title = document.getElementById("texttitle").getElementsByTagName("h2");
+    
+    var share = new Share('.share', {
+        title: title[0].innerHTML,
+        initialized: true,
+        //默认获取网站描述
+        description: dp,
+        //网站图片默认获取的是设置的用户头像
+        image: avatarSrc,
+        //激活的分享网站
+        sites: ["weibo", "qq", "wechat", "douban", "qzone", "facebook", "twitter", "google"],
+        //微信分享PC端会生成二维码分享,移动端如果可以唤起微信最好
+        wechatQrcodeTitle: "微信扫一扫：分享", // 微信二维码提示文字
+        wechatQrcodeHelper: '<p>微信里扫一下二维码</p><p>便可将本文分享至朋友圈。</p>',
+        //关闭的网站分享
+        disabled: ['google', 'linkedin'],
+        wechatQrcodePosition: 'bottom'
+    });
+
+    //点击分享按钮展现出分享icons
+    var sharebtnTag = false;
+    $(".sharebtn").click(function () {
+        if(!sharebtnTag)
+        {
+            $(".share").show();
+            sharebtnTag = true;
+        }
+        else
+        {
+            $(".share").hide();
+            sharebtnTag = false;
+        }
+    })
+
+    var donatebtnTag = false;
+    $(".donateImg").click(function () {
+        if(!donatebtnTag)
+        {
+            $(".donate").show();
+            donatebtnTag = true;
+        }
+        else{
+            $(".donate").hide();
+            donatebtnTag = false;
+        }
+    })
+
+    //加载后的事件同步（阅读量、移动端评论等
+    window.onload=function(){
+        getHotnum();
+        var sharepc = $(".share").eq(0).html();
+        $(".share").eq(1).html(sharepc);
+        document.getElementById("veditor").setAttribute("placeholder", jrsc);
+        aplayerbtnInit();
+    }
+</script>
 
 
-  </body>
-</html>
+<script>
+    jQuery(document).ready(function ($) {
+        function lazyload() {
+            var oLazyload = $("img.lazyload"),
+                fLazyload = function (hLazyload) {
+                    var nLazyload = $(window).height() + $(document).scrollTop();
+                    oLazyload.each(function () {
+                        $(this).offset().top < nLazyload && ($(this).trigger("appear"), oLazyload =
+                            oLazyload.not(this));
+                    }), 0 == oLazyload.length && $(window).unbind("scroll", fLazyload);
+                };
+            oLazyload.each(function () {
+                $(this).one("appear", function () {
+                    $(this).attr("src", $(this).attr("data-original"));
+                    $(this).fadeIn(500);
+                });
+            }), $(window).bind("scroll", fLazyload), fLazyload();
+        }
+        lazyload();
+    });
+</script>
+
+<!-- <script src="https://dandelion-zwm.github.io/media/js/av-min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@3.13.0/dist/av-min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-live-query-min.js"></script> -->
+
+<script>
+    function getHotnum() {
+        //文章阅读热度（重构，利用leancloud原生api）
+        var pl = $("#pl").html();
+        var rootaddr = $("#rootaddr").html();
+        pl = pl.replace(rootaddr, "");
+
+        var appid = '';
+        var appkey = '';
+        console.log(appid, appkey)
+        if(AV==undefined)
+            AV.init({
+                appId: appid,
+                appKey: appkey
+            });
+        const query = new AV.Query('Counter');
+        query.equalTo('url', pl);
+        var time = 'Loading...';
+        query.find().then(function (results) {
+            console.log(results)
+            if (results.length == 0) {
+                console.log("0")
+                var NewCounter = AV.Object.extend('Counter');
+                var nc = new NewCounter();
+                nc.save({
+                    time: 1,
+                    title: "甘雨园拾花",
+                    url: pl,
+                    xid: pl,
+                }).then(function (object) {
+                    $(".hotnum").eq(0).html(1);
+                    $(".hotnum").eq(1).html(1);
+                });
+            } else {
+                id = results[0].id;
+                var todo = AV.Object.createWithoutData('Counter', id);
+                time = results[0].attributes.time + 1;
+                todo.set("time", time);
+                todo.save();
+                console.log(todo);
+                $(".hotnum").eq(0).html(time);
+                $(".hotnum").eq(1).html(time);
+            }
+
+        }, function (error) {
+            console.log(error)
+        });
+    }
+</script>
