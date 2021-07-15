@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dandelion-zwm.github.io</id>
     <title>WeimingZhang</title>
-    <updated>2021-06-13T13:02:23.447Z</updated>
+    <updated>2021-07-15T07:53:43.014Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dandelion-zwm.github.io"/>
     <link rel="self" href="https://dandelion-zwm.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://dandelion-zwm.github.io/images/avatar.png</logo>
     <icon>https://dandelion-zwm.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, WeimingZhang</rights>
+    <entry>
+        <title type="html"><![CDATA[最新版数学分析]]></title>
+        <id>https://dandelion-zwm.github.io/post/zui-xin-ban-shu-xue-fen-xi/</id>
+        <link href="https://dandelion-zwm.github.io/post/zui-xin-ban-shu-xue-fen-xi/">
+        </link>
+        <updated>2021-06-30T01:50:18.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[106-lexicon]]></title>
         <id>https://dandelion-zwm.github.io/post/106-lexicon/</id>
